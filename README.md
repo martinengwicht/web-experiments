@@ -14,6 +14,10 @@ Access the raw data of the audio output by routing your sound through a real-tim
 changed this code:
 
 ```javascript
+...
+    myNodes.volume = myAudioContext.createGainNode();
+...   
+
 function playSound() {
     // create a new AudioBufferSourceNode
     var source = myAudioContext.createBufferSource();
@@ -37,6 +41,10 @@ function pauseSound() {
 to this:
 
 ```javascript
+...
+    myNodes.volume = myAudioContext.createGain();
+...
+
 function playSound() {
     // create a new AudioBufferSourceNode
     var source = myAudioContext.createBufferSource();

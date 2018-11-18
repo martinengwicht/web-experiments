@@ -82,25 +82,24 @@
             source = routeSound(source);
             // play right now (0 seconds from now)
             // can also pass myAudioContext.currentTime
-						console.log("source:",source);
-						if (source.start) {
-							source.start(0);
-						} else if (source.play) {
-							source.play(0);
-						} else if (source.noteOn) {
-							source.noteOn(0);
-						}
+            if (source.start) {
+            	source.start(0);
+            } else if (source.play) {
+            	source.play(0);
+            } else if (source.noteOn) {
+            	source.noteOn(0);
+            }
             mySpectrum = setInterval(drawSpectrum, 30);
             mySource = source;
         }
 
         function pauseSound() {
             var source = mySource;
-						if (source.stop) {
-							source.stop(0);
-						} else if (source.noteOff) {
-							source.noteOff(0);
-						}
+            if (source.stop) {
+            	source.stop(0);
+            } else if (source.noteOff) {
+            	source.noteOff(0);
+            }
             clearInterval(mySpectrum);
         }
 
